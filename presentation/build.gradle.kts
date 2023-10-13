@@ -80,5 +80,5 @@ dependencies {
     implementation(Dependencies.GLIDE)
     annotationProcessor(Dependencies.GLIDE_COMPILER)
     implementation(Dependencies.SWIPE_REFRESH_LAYOUT)
-    //implementation("com.github.Spikeysanju:MotionToast:1.4")
+    implementation("com.airbnb.android:lottie:6.0.0")
 }
