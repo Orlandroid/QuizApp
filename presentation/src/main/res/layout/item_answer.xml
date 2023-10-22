@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <com.google.android.material.button.MaterialButton xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/question"
+        style="@style/button_answers"
+        app:cornerRadius="8dp"
+        app:strokeColor="#A58C6A"
+        app:strokeWidth="2dp"
+        tools:text="answer" />
+</layout>

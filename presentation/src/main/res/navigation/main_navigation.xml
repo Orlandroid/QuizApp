@@ -9,5 +9,14 @@
         android:id="@+id/homeFragment"
         android:name="com.example.presentation.ui.home.HomeFragment"
         android:label="HomeFragment"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_homeFragment_to_questionViewFragment"
+            app:destination="@id/questionViewFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/questionViewFragment"
+        android:name="com.example.presentation.ui.questionview.QuestionViewFragment"
+        android:label="QuestionViewFragment"
+        tools:layout="@layout/fragment_question_view" />
 </navigation>
