@@ -6,28 +6,28 @@ import com.example.presentation.R
 
 class QuestionsProvider {
 
-    private val questionOne = listOf(
+    private val questionOne =
         Question(
             backgroundQuestions = R.drawable.never_wok_on_fryday,
             question = "¿Que dia de la semala hal no ha trabajado en años?",
-            correctAnswerId = 1,
+            correctAnswerId = 4,
             answers = answersQuestionOne()
         )
-    )
+
 
     private fun answersQuestionOne() = listOf(
         Answer(1, "Lunes"), Answer(2, "Martes"), Answer(3, "Jueves"), Answer(4, "Viernes")
     )
 
 
-    private val questionTwo = listOf(
+    private val questionTwo =
         Question(
             backgroundQuestions = R.drawable.malcom_portada,
-            question = "¿Que le enseña reese secretamente a lios?",
+            question = "¿Que le enseña reese secretamente a lois?",
             correctAnswerId = 3,
             answers = answersQuestionTwo()
         )
-    )
+
 
     private fun answersQuestionTwo() = listOf(
         Answer(1, "¿Como cocinar?"),
@@ -36,14 +36,14 @@ class QuestionsProvider {
         Answer(4, "¿Como usar el dvd?")
     )
 
-    private val questionThree = listOf(
+    private val questionThree =
         Question(
             backgroundQuestions = R.drawable.broken_leg,
             question = "¿Como pierde la pierna la abuela?",
             correctAnswerId = 2,
             answers = answersQuestionThree()
         )
-    )
+
 
     private fun answersQuestionThree() = listOf(
         Answer(1, "¿Tratando de conseguir un dulce de una piñata?"),
@@ -52,14 +52,14 @@ class QuestionsProvider {
         Answer(4, "¿Jugando baskquetball con reese?")
     )
 
-    private val questionFour = listOf(
+    private val questionFour =
         Question(
             backgroundQuestions = R.drawable.first_girlfriend,
             question = "¿Cual es el nombre de la primera novia de malcom?",
             correctAnswerId = 4,
             answers = answersQuestionFour()
         )
-    )
+
 
     private fun answersQuestionFour() = listOf(
         Answer(1, "Diana"),
@@ -68,14 +68,14 @@ class QuestionsProvider {
         Answer(4, "Sarah")
     )
 
-    private val questionFive = listOf(
+    private val questionFive =
         Question(
             backgroundQuestions = R.drawable.malcom_portada,
             question = "¿Cual es el nombre de la esposa de francis?",
             correctAnswerId = 1,
             answers = answersQuestionFive()
         )
-    )
+
 
     private fun answersQuestionFive() = listOf(
         Answer(1, "Piama"),
@@ -84,14 +84,14 @@ class QuestionsProvider {
         Answer(4, "Audrey")
     )
 
-    private val questionSix = listOf(
+    private val questionSix =
         Question(
             backgroundQuestions = R.drawable.malcom_portada,
             question = "¿Cual es el IQ del malcom?",
             correctAnswerId = 2,
             answers = answersQuestionSix()
         )
-    )
+
 
     private fun answersQuestionSix() = listOf(
         Answer(1, "140"),
@@ -100,14 +100,14 @@ class QuestionsProvider {
         Answer(4, "180")
     )
 
-    private val questionSeven = listOf(
+    private val questionSeven =
         Question(
             backgroundQuestions = R.drawable.malcom_portada,
             question = "¿Que hijo nacio segundo?",
             correctAnswerId = 3,
             answers = answersQuestionSeven()
         )
-    )
+
 
     private fun answersQuestionSeven() = listOf(
         Answer(1, "Malcom"),
@@ -116,14 +116,14 @@ class QuestionsProvider {
         Answer(4, "Dewey")
     )
 
-    private val questionEight = listOf(
+    private val questionEight =
         Question(
             backgroundQuestions = R.drawable.malcom_portada,
             question = "¿Cuantas temporadas tiene malcom in the middle?",
             correctAnswerId = 1,
             answers = answersQuestionEight()
         )
-    )
+
 
     private fun answersQuestionEight() = listOf(
         Answer(1, "7"),
@@ -150,24 +150,23 @@ class QuestionsProvider {
 
     private val questionTeen =
         Question(
-            backgroundQuestions = R.drawable.malcom_portada,
-            question = "¿Que amigo de malcom usa silla de ruedas?",
+            backgroundQuestions = R.drawable.sombrero_magico,
+            question = "Qué es lo que consigue Francis después de la huelga de hambre en la escuela militar.",
             correctAnswerId = 1,
             answers = answersQuestionTeen()
         )
 
 
     private fun answersQuestionTeen() = listOf(
-        Answer(1, "Stevie"),
-        Answer(2, "Manny"),
-        Answer(3, "Thomas"),
-        Answer(4, "Oliver")
+        Answer(1, "Un sombrero mágico"),
+        Answer(2, "Comida para todos"),
+        Answer(3, "100 quacks ")
     )
 
     private val questionEleven =
         Question(
-            backgroundQuestions = R.drawable.malcom_portada,
-            question = "¿Que amigo de malcom usa silla de ruedas?",
+            backgroundQuestions = R.drawable.imagination_mujeres,
+            question = "¿Cuando lios imagina sus hijos como mujeres cuales son sus nombres?",
             correctAnswerId = 1,
             answers = answersQuestionEleven()
         )
@@ -262,7 +261,7 @@ class QuestionsProvider {
 
     private val questionSevenTeen =
         Question(
-            backgroundQuestions = R.drawable.cindy,
+            backgroundQuestions = R.drawable.komodo_300,
             question = "El nombre del fuego pirotécnico que dejó ciegos a Malcolm, Reese y Francis.",
             correctAnswerId = 1,
             answers = answersQuestionSevenTeen()
@@ -278,7 +277,7 @@ class QuestionsProvider {
     private val questionEithTeen =
         Question(
             backgroundQuestions = R.drawable.papa_lios,
-            question = "¿Por qué a Dewey le da miedo su abuelo, el papá de Lois?",
+            question = "¿Por qué a Dewey le da miedo su abuelo, el papá de lois?",
             correctAnswerId = 4,
             answers = answersQuestionEithTeen()
         )
@@ -286,7 +285,7 @@ class QuestionsProvider {
 
     private fun answersQuestionEithTeen() = listOf(
         Answer(1, "Porque un día explotó una granada en el refrigerador"),
-        Answer(2, "Porque maltrata a Lois"),
+        Answer(2, "Porque maltrata a lois"),
         Answer(3, "Porque tenía otra familia en Canadá"),
         Answer(4, "Porque atropelló su triciclo con su carro")
     )
@@ -307,9 +306,9 @@ class QuestionsProvider {
         Answer(4, "Los especiales"),
     )
 
-    private fun getTeenRandomsQuestions(questionsToShow: Int = 10) {
+    fun getTeenRandomsQuestions(questionsToShow: Int = 10) =
         getAllTheQuestions().shuffled().take(questionsToShow)
-    }
+
 
     private fun getAllTheQuestions() = listOf(
         questionOne,
@@ -329,6 +328,7 @@ class QuestionsProvider {
         questionFiveTeen,
         questionSixTeen,
         questionSevenTeen,
+        questionEithTeen,
         questionNineTeen
     )
 

@@ -8,6 +8,8 @@ import android.widget.ImageView
 import androidx.annotation.ColorRes
 import androidx.navigation.NavDirections
 import androidx.navigation.findNavController
+import com.example.presentation.R
+import com.google.android.material.button.MaterialButton
 
 
 fun View.visible() {
@@ -49,6 +51,10 @@ fun View.takeScreenshot(): Bitmap {
     }
     this.draw(canvas)
     return bitmap
+}
+
+fun MaterialButton.changeBackgroundColor(@ColorRes color: Int) {
+    setBackgroundColor(context.resources.getColor(color))
 }
 
 

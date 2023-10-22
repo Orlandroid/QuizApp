@@ -10,7 +10,7 @@ fun Fragment.countDown(
     timeForTick: Long = 1000,
     onFinish: () -> Unit = {},
     onMyTick: (currentSecond: Int) -> Unit
-) {
+): CountDownTimer {
     var timer: CountDownTimer? = null
     timer = object : CountDownTimer(totalSeconds, timeForTick) {
         override fun onTick(millisUntilFinished: Long) {
@@ -25,4 +25,5 @@ fun Fragment.countDown(
         }
     }
     timer.start()
+    return timer
 }

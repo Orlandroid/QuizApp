@@ -5,12 +5,14 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.domain.entities.local.Answer
+import com.example.presentation.R
 import com.example.presentation.databinding.ItemAnswerBinding
+import com.example.presentation.extensions.changeBackgroundColor
 import com.example.presentation.extensions.click
 
 
-class QuestionsAdapter(private val clickOnUser: (Answer) -> Unit) :
-    RecyclerView.Adapter<QuestionsAdapter.ViewHolder>() {
+class AnswersAdapter(private val clickOnUser: (Answer) -> Unit) :
+    RecyclerView.Adapter<AnswersAdapter.ViewHolder>() {
 
     private var listOfAnswers: List<Answer> = arrayListOf()
 
@@ -20,13 +22,25 @@ class QuestionsAdapter(private val clickOnUser: (Answer) -> Unit) :
         notifyDataSetChanged()
     }
 
+    fun getItems() = listOfAnswers
+
 
     class ViewHolder(private val binding: ItemAnswerBinding) :
         RecyclerView.ViewHolder(binding.root) {
         fun bind(question: Answer, clickOnAnswer: (Answer) -> Unit) = with(binding) {
+            binding.question.changeBackgroundColor(R.color.background)
+            question.isCorrectAnswer?.let {
+                val colorAnswer = if (it) {
+                    R.color.green_color
+                } else {
+                    R.color.red_color
+                }
+                binding.question.changeBackgroundColor(colorAnswer)
+            }
             root.click {
                 clickOnAnswer(question)
             }
+            binding.question.text = question.answer
         }
     }
 
