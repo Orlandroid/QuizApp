@@ -4,12 +4,14 @@ import android.annotation.SuppressLint
 import android.os.CountDownTimer
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
+import androidx.navigation.navGraphViewModels
 import com.example.domain.entities.local.Answer
 import com.example.presentation.R
 import com.example.presentation.base.BaseFragment
 import com.example.presentation.databinding.FragmentQuestionViewBinding
 import com.example.presentation.extensions.click
 import com.example.presentation.extensions.countDown
+import com.example.presentation.extensions.onBackGesture
 import com.example.presentation.providers.QuestionsProvider
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
@@ -26,6 +28,10 @@ class QuestionViewFragment :
         questionsProvider.getTeenRandomsQuestions()
     }
     private var timer: CountDownTimer? = null
+    private var score = 0
+    private val viewModel: QuestionsViewModel by navGraphViewModels(R.id.main_navigation) {
+        defaultViewModelProviderFactory
+    }
 
     companion object {
         const val FINAL_QUESTION = 9
@@ -37,13 +43,19 @@ class QuestionViewFragment :
             timer?.cancel()
             findNavController().popBackStack()
         }
+        onBackGesture {
+            timer?.cancel()
+        }
         setDataCurrentQuestion(currentQuestion)
         doCountDown()
     }
 
     private fun onFinishTimeForCurrentQuestion() {
         if (currentQuestion == FINAL_QUESTION) {
-            //go to scoreView
+            viewModel.user.score = score
+            findNavController().navigate(
+                QuestionViewFragmentDirections.actionQuestionViewFragmentToScoreViewFragment()
+            )
             return
         }
         currentQuestion++
@@ -83,14 +95,16 @@ class QuestionViewFragment :
         }
     }
 
-    private fun checkAnswer(answer: Answer) {
-        if (answer.id == questions[currentQuestion].correctAnswerId) {
-            setCorrectAnswer(answer.id)
-        } else {
-            showCorrectAndWrongQuestion(
-                idCorrectAnswer = questions[currentQuestion].correctAnswerId,
-                idWrongAnswer = answer.id
-            )
+    private fun checkAnswer(answerUser: Answer) {
+        questions[currentQuestion].correctAnswerId.let { correctIdAnswer ->
+            if (answerUser.id == correctIdAnswer) {
+                score++
+                setCorrectAnswer(answerUser.id)
+            } else {
+                showCorrectAndWrongQuestion(
+                    idCorrectAnswer = correctIdAnswer, idWrongAnswer = answerUser.id
+                )
+            }
         }
     }
 

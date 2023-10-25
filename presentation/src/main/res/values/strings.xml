@@ -19,4 +19,6 @@
     <string name="welcome">Welcome</string>
     <string name="name">Name</string>
     <string name="start_quiz">Start Quiz</string>
+    <string name="felicidades">!Felicidades!</string>
+    <string name="terminar">Terminar</string>
 </resources>

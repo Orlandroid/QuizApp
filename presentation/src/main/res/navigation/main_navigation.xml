@@ -18,5 +18,14 @@
         android:id="@+id/questionViewFragment"
         android:name="com.example.presentation.ui.questionview.QuestionViewFragment"
         android:label="QuestionViewFragment"
-        tools:layout="@layout/fragment_question_view" />
+        tools:layout="@layout/fragment_question_view">
+        <action
+            android:id="@+id/action_questionViewFragment_to_scoreViewFragment"
+            app:destination="@id/scoreViewFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/scoreViewFragment"
+        android:name="com.example.presentation.ui.score.ScoreViewFragment"
+        android:label="ScoreViewFragment"
+        tools:layout="@layout/fragment_score_view" />
 </navigation>

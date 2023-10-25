@@ -215,7 +215,7 @@ class QuestionsProvider {
         Question(
             backgroundQuestions = R.drawable.malcom_portada,
             question = "¿Cómo muere el personaje de Malcolm en el juego que juega en la computadora que Hall le compra al vecino?",
-            correctAnswerId = 3,
+            correctAnswerId = 4,
             answers = answersQuestionFourteen()
         )
 
@@ -294,7 +294,7 @@ class QuestionsProvider {
         Question(
             backgroundQuestions = R.drawable.krelboynes,
             question = "¿Cómo le dicen al grupo de amigos de Malcolm en la escuela?",
-            correctAnswerId = 4,
+            correctAnswerId = 1,
             answers = answersQuestionNineTeen()
         )
 

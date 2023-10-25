@@ -8,6 +8,7 @@ import com.example.domain.entities.local.Answer
 import com.example.presentation.R
 import com.example.presentation.databinding.ItemAnswerBinding
 import com.example.presentation.extensions.changeBackgroundColor
+import com.example.presentation.extensions.changeTextColor
 import com.example.presentation.extensions.click
 
 
@@ -29,12 +30,14 @@ class AnswersAdapter(private val clickOnUser: (Answer) -> Unit) :
         RecyclerView.ViewHolder(binding.root) {
         fun bind(question: Answer, clickOnAnswer: (Answer) -> Unit) = with(binding) {
             binding.question.changeBackgroundColor(R.color.background)
+            binding.question.changeTextColor(R.color.black)
             question.isCorrectAnswer?.let {
                 val colorAnswer = if (it) {
                     R.color.green_color
                 } else {
                     R.color.red_color
                 }
+                binding.question.changeTextColor()
                 binding.question.changeBackgroundColor(colorAnswer)
             }
             root.click {

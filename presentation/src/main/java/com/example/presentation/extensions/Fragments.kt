@@ -1,5 +1,7 @@
 package com.example.presentation.extensions
 
+import androidx.activity.OnBackPressedCallback
+import androidx.activity.addCallback
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.LiveData
 import androidx.navigation.NavDirections
@@ -59,4 +61,23 @@ fun Fragment.showErrorNetwork(shouldCloseTheViewOnApiError: Boolean = false) {
             }
         })
     activity?.let { dialog.show(it.supportFragmentManager, "alertMessage") }
+}
+
+fun Fragment.onBackPress(action: () -> Unit) {
+    requireActivity().onBackPressedDispatcher.addCallback(
+        viewLifecycleOwner,
+        object : OnBackPressedCallback(true) {
+            override fun handleOnBackPressed() {
+                action()
+            }
+        })
+}
+
+fun Fragment.onBackGesture(onBackAction: () -> Unit) {
+    requireActivity().onBackPressedDispatcher
+        .addCallback(this) {
+            isEnabled = false
+            onBackAction.invoke()
+            requireActivity().onBackPressedDispatcher.onBackPressed()
+        }
 }

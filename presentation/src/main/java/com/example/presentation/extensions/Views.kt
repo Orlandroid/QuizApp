@@ -57,4 +57,8 @@ fun MaterialButton.changeBackgroundColor(@ColorRes color: Int) {
     setBackgroundColor(context.resources.getColor(color))
 }
 
+fun MaterialButton.changeTextColor(@ColorRes color: Int = R.color.white) {
+    setTextColor(context.resources.getColor(color))
+}
+
 
