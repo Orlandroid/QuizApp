@@ -21,4 +21,6 @@
     <string name="start_quiz">Start Quiz</string>
     <string name="felicidades">!Felicidades!</string>
     <string name="terminar">Terminar</string>
+    <string name="puntuaci_nes">Puntuaciónes</string>
+    <string name="puntaje">puntaje</string>
 </resources>

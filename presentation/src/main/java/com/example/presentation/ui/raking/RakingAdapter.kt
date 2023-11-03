@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.domain.entities.local.Score
 import com.example.presentation.R
 import com.example.presentation.databinding.ItemAnswerBinding
+import com.example.presentation.databinding.ItemRakingBinding
 import com.example.presentation.extensions.changeBackgroundColor
 import com.example.presentation.extensions.changeTextColor
 
@@ -23,17 +24,18 @@ class RakingAdapter : RecyclerView.Adapter<RakingAdapter.ViewHolder>() {
 
     fun getItems() = listOfAnswers
 
-    class ViewHolder(private val binding: ItemAnswerBinding) :
+    class ViewHolder(private val binding: ItemRakingBinding) :
         RecyclerView.ViewHolder(binding.root) {
         fun bind(score: Score) = with(binding) {
-            binding.question.changeBackgroundColor(R.color.background)
-            binding.question.changeTextColor(R.color.black)
+            tvName.text = score.name
+            tvScore.text = score.puntuacion.toString()
+
         }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val layoutInflater = LayoutInflater.from(parent.context)
-        val binding = ItemAnswerBinding.inflate(layoutInflater, parent, false)
+        val binding = ItemRakingBinding.inflate(layoutInflater, parent, false)
         return ViewHolder(binding)
     }
 

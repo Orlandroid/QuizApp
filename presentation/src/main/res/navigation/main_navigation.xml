@@ -13,6 +13,9 @@
         <action
             android:id="@+id/action_homeFragment_to_questionViewFragment"
             app:destination="@id/questionViewFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_rankingFragment"
+            app:destination="@id/rankingFragment" />
     </fragment>
     <fragment
         android:id="@+id/questionViewFragment"
@@ -21,11 +24,22 @@
         tools:layout="@layout/fragment_question_view">
         <action
             android:id="@+id/action_questionViewFragment_to_scoreViewFragment"
-            app:destination="@id/scoreViewFragment" />
+            app:destination="@id/scoreViewFragment"
+            app:popUpTo="@+id/homeFragment" />
     </fragment>
     <fragment
         android:id="@+id/scoreViewFragment"
         android:name="com.example.presentation.ui.score.ScoreViewFragment"
         android:label="ScoreViewFragment"
-        tools:layout="@layout/fragment_score_view" />
+        tools:layout="@layout/fragment_score_view">
+        <action
+            android:id="@+id/action_scoreViewFragment_to_rankingFragment"
+            app:destination="@id/rankingFragment"
+            app:popUpTo="@+id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/rankingFragment"
+        android:name="com.example.presentation.ui.raking.RankingFragment"
+        android:label="RankingFragment"
+        tools:layout="@layout/fragment_ranking" />
 </navigation>

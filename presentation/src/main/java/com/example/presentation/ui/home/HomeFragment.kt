@@ -18,7 +18,6 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(R.layout.fragment_home) {
         defaultViewModelProviderFactory
     }
 
-
     override fun setUpUi() {
         viewModel.user = User()
         binding.btnStartQuiz.click {
@@ -26,6 +25,9 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(R.layout.fragment_home) {
         }
         binding.tvName.doOnTextChanged { text, _, _, _ ->
             viewModel.user.name = text.toString().trim()
+        }
+        binding.imageButton.click {
+            findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToRankingFragment())
         }
     }
 

@@ -71,10 +71,10 @@ class QuestionViewFragment :
 
     private fun setDataCurrentQuestion(currentQuestion: Int) {
         with(binding) {
-            questions[currentQuestion].let { currentQuestion ->
-                answersAdapter.setData(currentQuestion.answers)
-                imageQuestions.setImageResource(currentQuestion.backgroundQuestions)
-                tvQuestion.text = currentQuestion.question
+            questions[currentQuestion].let { myCurrentQuestion ->
+                answersAdapter.setData(myCurrentQuestion.answers.shuffled())
+                imageQuestions.setImageResource(myCurrentQuestion.backgroundQuestions)
+                tvQuestion.text = myCurrentQuestion.question
             }
         }
     }

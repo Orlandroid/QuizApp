@@ -14,7 +14,7 @@ interface ScoreDao {
     @Query("SELECT * FROM Score")
     fun getAllScoresFlow(): Flow<List<Score>>
 
-    @Query("SELECT * FROM Score")
+    @Query("SELECT * FROM Score ORDER BY puntuacion DESC")
     suspend fun getAllScores(): List<Score>
 
     @Query("DELETE  FROM user")
