@@ -1,7 +1,7 @@
-package com.example.data.db
+package com.example.data.db.dao
 
 import androidx.room.*
-import com.example.data.db.entities.User
+import com.example.domain.entities.local.User
 import kotlinx.coroutines.flow.Flow
 
 

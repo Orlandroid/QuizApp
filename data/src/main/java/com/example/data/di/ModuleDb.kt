@@ -33,5 +33,9 @@ object ModuleDb {
     @Provides
     fun provideUserDao(db: MainDatabase) = db.userDao()
 
+    @Singleton
+    @Provides
+    fun provideScoreDao(db: MainDatabase) = db.scoreDao()
+
 
 }

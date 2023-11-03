@@ -66,6 +66,7 @@ class QuestionViewFragment :
 
     private fun onEachSecond(second: Int) {
         binding.tvTimer.text = second.toString()
+        binding.progressBarCircle.progress = second
     }
 
     private fun setDataCurrentQuestion(currentQuestion: Int) {

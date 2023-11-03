@@ -6,6 +6,7 @@ import com.example.presentation.R
 import com.example.presentation.base.BaseFragment
 import com.example.presentation.databinding.FragmentScoreViewBinding
 import com.example.presentation.extensions.click
+import com.example.presentation.extensions.onBackGesture
 import com.example.presentation.ui.questionview.QuestionsViewModel
 
 
@@ -18,8 +19,13 @@ class ScoreViewFragment : BaseFragment<FragmentScoreViewBinding>(R.layout.fragme
     override fun setUpUi() {
         binding.user = viewModel.user
         binding.button.click {
-            findNavController().popBackStack(R.id.homeFragment, false)
+            goBackHome()
         }
+        onBackGesture { goBackHome() }
+    }
+
+    private fun goBackHome() {
+        findNavController().popBackStack(R.id.homeFragment, false)
     }
 
 }
